@@ -2,8 +2,8 @@ package src.dev.entities;
 
 import java.awt.Graphics;
 import java.awt.Rectangle;
+import java.util.Random;
 import src.dev.game.Game;
-
 
 public abstract class Entity {
 	
@@ -24,8 +24,13 @@ public abstract class Entity {
 	protected float x,y;
 	protected int width,height;
 	protected float speed;
-	protected Rectangle bounds;
+	protected int counter;
+	protected int anim;
+	protected int image;
+	
 	protected Game game;
+	protected Random r;
+	protected Rectangle bounds;
 	
 	public Entity(Game game,float x,float y,int width,int height){
 		this.x = x;
@@ -33,6 +38,7 @@ public abstract class Entity {
 		this.width = width;
 		this.height = height;
 		this.game=game;
+		r = new Random();
 		bounds = new Rectangle(0,0,width,height);
 	}
 	

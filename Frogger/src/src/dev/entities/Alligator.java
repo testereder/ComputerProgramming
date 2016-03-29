@@ -6,21 +6,17 @@ import src.dev.graphics.Assets;
 
 
 public class Alligator extends Entity{
-
-	private int alligator;
-	private int counter;
-	private int anim;
 	
 	public Alligator(Game game,int pos) {
 		super(game,0,100+34*pos,Entity.alli_width,Entity.alli_height);
 		
 		if(y==202||y==134){
 			x=-width;
-			alligator=1;
+			image=1;
 			speed = game.getDefaultSpeed();
 		}else{
 			x=game.getWidht()+width;
-			alligator=0;
+			image=0;
 			speed=-game.getDefaultSpeed();
 		}
 	}
@@ -39,6 +35,6 @@ public class Alligator extends Entity{
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(Assets.alligator[alligator][anim],(int)x,(int)y,width,height,null);
+		g.drawImage(Assets.alligator[image][anim],(int)x,(int)y,width,height,null);
 	}
 }

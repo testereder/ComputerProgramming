@@ -1,20 +1,16 @@
 package src.dev.entities;
 
 import java.awt.Graphics;
-import java.util.Random;
 import src.dev.game.Game;
 import src.dev.graphics.Assets;
 
-
 public class AlligatorBank extends Entity{
 	
-	private static Random r = new Random();
-	private int counter;
-	private int anim;
 	private final int time = 600;
 
 	public AlligatorBank(Game game) {
-		super(game,25f+82.2f*r.nextInt(5),82,Entity.alliBank_width,Entity.alliBank_height);
+		super(game,0,82,Entity.alliBank_width,Entity.alliBank_height);
+		x=25f+82.2f*r.nextInt(5);
 	}
 
 	@Override

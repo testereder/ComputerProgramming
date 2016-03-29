@@ -12,10 +12,6 @@ public class Vehicles {
 	private LinkedList<Bus> bus = new LinkedList<Bus>();
 	private LinkedList<Taxi> taxi = new LinkedList<Taxi>();
 	
-	Car tempCar;
-	Truck tempTruck;
-	Bus tempBus;
-	Taxi tempTaxi;
 	Game game;
 	
 	public Vehicles(Game game){
@@ -24,54 +20,46 @@ public class Vehicles {
 	
 	public void tick(){
 		for(int i=0 ; i<car.size() ; i++ ){
-			tempCar = car.get(i);
-			if(tempCar.getX()>game.getWidht()+Entity.car_width+1||tempCar.getX()<-(Entity.car_width+1))
-				removeCar(tempCar);
-			tempCar.tick();
+			if(	car.get(i).getX()>game.getWidht()+Entity.car_width+1 || car.get(i).getX()<-(Entity.car_width+1) )
+				removeCar(car.get(i));
+			else
+				car.get(i).tick();
 		}
 		
 		for(int i=0 ; i<truck.size() ; i++ ){
-			tempTruck = truck.get(i);
-			if(tempTruck.getX()>game.getWidht()+Entity.truck_width+1||tempTruck.getX()<-(Entity.truck_width+1))
-				removeTruck(tempTruck);
-			tempTruck.tick();
+			if(truck.get(i).getX()>game.getWidht()+Entity.truck_width+1||truck.get(i).getX()<-(Entity.truck_width+1))
+				removeTruck(truck.get(i));
+			else
+				truck.get(i).tick();
 		}
 		
 		for(int i=0 ; i<bus.size() ; i++ ){
-			tempBus = bus.get(i);
-			if(tempBus.getX()>game.getWidht()+Entity.truck_width+1||tempBus.getX()<-(Entity.truck_width+1))
-				removeBus(tempBus);
-			tempBus.tick();
+			if(bus.get(i).getX()>game.getWidht()+Entity.truck_width+1||bus.get(i).getX()<-(Entity.truck_width+1))
+				removeBus(bus.get(i));
+			else
+				bus.get(i).tick();
 		}
 		
 		for(int i=0; i<taxi.size() ; i++){
-			tempTaxi = taxi.get(i);
-			if(tempTaxi.getX()>game.getWidht()+Entity.car_width+1||tempTaxi.getX()<-(Entity.car_width+1))
-				removeTaxi(tempTaxi);
-			tempTaxi.tick();
+			if(taxi.get(i).getX()>game.getWidht()+Entity.car_width+1||taxi.get(i).getX()<-(Entity.car_width+1))
+				removeTaxi(taxi.get(i));
+			else
+				taxi.get(i).tick();
 		}
 	}
 	
 	public void render(Graphics g){
-		for(int i=0 ; i<car.size() ; i++ ){
-			tempCar = car.get(i);
-			tempCar.render(g);
-		}
+		for(int i=0 ; i<car.size() ; i++ )
+			car.get(i).render(g);
 		
-		for(int i=0 ; i<truck.size() ; i++ ){
-			tempTruck = truck.get(i);
-			tempTruck.render(g);
-		}
+		for(int i=0 ; i<truck.size() ; i++ )
+			truck.get(i).render(g);
 		
-		for(int i=0 ; i<bus.size() ; i++ ){
-			tempBus = bus.get(i);
-			tempBus.render(g);
-		}
+		for(int i=0 ; i<bus.size() ; i++ )
+			bus.get(i).render(g);
 		
-		for(int i=0 ; i<taxi.size() ; i++ ){
-			tempTaxi = taxi.get(i);
-			tempTaxi.render(g);
-		}
+		for(int i=0 ; i<taxi.size() ; i++ )
+			taxi.get(i).render(g);
 	}
 	
 	public void addCar(Car car){

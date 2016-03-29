@@ -4,7 +4,6 @@ import java.awt.Graphics;
 import src.dev.game.Game;
 import src.dev.graphics.Assets;
 
-
 public class Player extends Entity{
 	
 	private boolean move = true;
@@ -13,15 +12,15 @@ public class Player extends Entity{
 	private boolean moveLeft = false;
 	private boolean moveRight = false;
 	
-	private int score;
+	
 	private float moveX = 27.40f/8;
 	private float moveY = 34f/8;
-	private int counter=8;
-	private int anim;
-	private int frog;
 
+	private int score;
+	
 	public Player(Game game) {
 		super(game,(game.getWidht()-Entity.player_width)/2,game.getHeight()-75,Entity.player_width,Entity.player_height);
+		counter=8;
 	}
 
 	@Override
@@ -79,14 +78,14 @@ public class Player extends Entity{
 		}else
 			moveRight = false;
 		
-		if(counter==2)frog=1;
-		if(counter==5)frog=2;
-		if(counter==8)frog=0;
+		if(counter==2)image=1;
+		if(counter==5)image=2;
+		if(counter==8)image=0;
 	}
 
 	@Override
 	public void render(Graphics g) {
-		g.drawImage(Assets.frog[anim][frog],(int)x,(int)y,width,height,null);
+		g.drawImage(Assets.frog[anim][image],(int)x,(int)y,width,height,null);
 	}
 	
 	public void setScore(int score){

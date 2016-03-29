@@ -94,15 +94,15 @@ public class Game implements Runnable{
 		/*
 		 * This is the game loop, it controls the game so it upgrade its variables and draw its figures on the screen 60 times per second;
 		 * 
-		 * 1. The amount of time that each tick* will have is defined on line ???, dividing the amount of nanoseconds in a second by the amount of frames
+		 * 1. The amount of time that each tick* will have is defined on line 117, dividing the amount of nanoseconds in a second by the amount of frames
 		 * 	we want in the game, in this case: 60;
 		 * 
 		 * After that, every time the while loop runs:
 		 * 
-		 * 2. The now variable gets how many time the game is running (line ???);
+		 * 2. The now variable gets how many time the game is running (line 125);
 		 * 3. The delta variable is increased by how many time the game has been running since the last time the loop ran in nanoseconds
-		 * 	divided by how many time each tick* has in the game (line ???);
-		 * 4. The lastTime variable gets the current running time for the next time the game loop will run (line ???); 
+		 * 	divided by how many time each tick* has in the game (line 126);
+		 * 4. The lastTime variable gets the current running time for the next time the game loop will run (line 128); 
 		 * 5. If the delta variable holds a value greater than 1, it means that the time that each tick* will have is passed and
 		 * 	it is time to tick* and render* the game;
 		 * 

@@ -6,10 +6,7 @@ import src.dev.graphics.Assets;
 
 public class Turtle extends Entity{
 	
-	private int counter;
 	private int amountTurtle;
-	private int turtle;
-	private int anim;
 	
 	public Turtle(Game game,int pos,int amountTurtle) {
 		super(game,0,115+34*pos,Entity.turtle_width,Entity.turtle_height);
@@ -19,11 +16,11 @@ public class Turtle extends Entity{
 		
 		if(y==217||y==149){
 			x=-width;
-			turtle=1;
+			image=1;
 			speed = game.getDefaultSpeed();
 		}else{
 			x=game.getWidht()+width;
-			turtle=0;
+			image=0;
 			speed=-game.getDefaultSpeed();
 		}
 	}
@@ -45,10 +42,10 @@ public class Turtle extends Entity{
 	public void render(Graphics g) {
 		if(speed<0){
 			for(int i=0 ; i<amountTurtle ; i++ )
-				g.drawImage(Assets.turtle[turtle][anim],(int)(x-i*Entity.turtle_width),(int)y,Entity.turtle_width,height,null);
+				g.drawImage(Assets.turtle[image][anim],(int)(x-i*Entity.turtle_width),(int)y,Entity.turtle_width,height,null);
 		}else{
 			for(int i=0 ; i<amountTurtle ; i++ )
-				g.drawImage(Assets.turtle[turtle][anim],(int)(x+i*Entity.turtle_width),(int)y,Entity.turtle_width,height,null);
+				g.drawImage(Assets.turtle[image][anim],(int)(x+i*Entity.turtle_width),(int)y,Entity.turtle_width,height,null);
 		}
 	}
 }
