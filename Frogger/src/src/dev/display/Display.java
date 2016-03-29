@@ -11,7 +11,7 @@ import javax.swing.JFrame;
 public class Display {
 	
 	/*
-	 * A Jframe is the screen itself;
+	 * A Jframe is the window itself;
 	 * A Canvas is the place where the items are drawn and measured from, not the actual window
 	 */
 	private JFrame frame;
@@ -44,7 +44,7 @@ public class Display {
 		canvas.setFocusable(false);
 		
 		frame.add(canvas);										// add the canvas to the window frame;
-		frame.pack();											// makes the frame pack all the informatiom together
+		frame.pack();											// makes the frame pack all the information together
 	}
 	
 	//method used to finish and close the window;
