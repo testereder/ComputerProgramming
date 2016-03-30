@@ -7,7 +7,7 @@
  * 				- The you tube channel "Java Game Development Series" -  https://www.youtube.com/playlist?list=PLWms45O3n--6KCNAEETGiVTEFvnqA7qCi
  * 				- The you tube channel "New Beginner 2D Programming" - https://www.youtube.com/playlist?list=PLah6faXAgguMnTBs3JnEJY0shAc18XYQZ
  *  
- * @authors Eder Paz, Neil Blake, Logan ???
+ * @authors Eder Paz, Neil Blake, Logan Wedel
  * @version 1.0 Created: 03/30/2016
  */
 
