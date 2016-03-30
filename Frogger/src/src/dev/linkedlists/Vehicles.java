@@ -1,5 +1,11 @@
 package src.dev.linkedlists;
 
+/**
+ * This class holds the linked lists that helps the creation of the objects of the game;
+ * A linked list is an array the can be extended and shrunk according to necessity, that way, each vehicle object will make part of a linked list
+ * so that we can create as much objects of an specific class as we want in the game;
+ */
+
 import java.awt.Graphics;
 import java.util.LinkedList;
 import src.dev.entities.*;
@@ -7,17 +13,23 @@ import src.dev.game.Game;
 
 public class Vehicles {
 	
+	//Initiates the linked lists that will hold each of the vehicles objects
 	private LinkedList<Car> car = new LinkedList<Car>();
 	private LinkedList<Truck> truck = new LinkedList<Truck>();
 	private LinkedList<Bus> bus = new LinkedList<Bus>();
 	private LinkedList<Taxi> taxi = new LinkedList<Taxi>();
 	
+	//Create an instance of game so that the game variables can be used;
 	Game game;
 	
+	//Constructor
+	//Makes a copy of the game object passed to it;
 	public Vehicles(Game game){
 		this.game=game;
 	}
 	
+	//The tick() method goes through every position available on the linked lists and tests the position of the object on the screen
+	//If it is already completely out of the screen, the respective object is removed, if it is not, its tick() method is called
 	public void tick(){
 		for(int i=0 ; i<car.size() ; i++ ){
 			if(	car.get(i).getX()>game.getWidht()+Entity.car_width+1 || car.get(i).getX()<-(Entity.car_width+1) )
@@ -48,6 +60,7 @@ public class Vehicles {
 		}
 	}
 	
+	//The render method goes through every position available on the linked lists and call the objects render method;
 	public void render(Graphics g){
 		for(int i=0 ; i<car.size() ; i++ )
 			car.get(i).render(g);
@@ -61,6 +74,8 @@ public class Vehicles {
 		for(int i=0 ; i<taxi.size() ; i++ )
 			taxi.get(i).render(g);
 	}
+	
+	//This section holds the add() methods used to add objects to the linked lists
 	
 	public void addCar(Car car){
 		this.car.add(car);
@@ -77,6 +92,8 @@ public class Vehicles {
 	public void addTaxi(Taxi taxi){
 		this.taxi.add(taxi);
 	}
+	
+	//This section is for the remove() methods used to remove objects from the linked lists
 	
 	public void removeCar(Car car){
 		this.car.remove(car);

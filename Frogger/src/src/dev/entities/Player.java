@@ -88,7 +88,6 @@ public class Player extends Entity{
 		 * 				The respective moving variable is set to false, ending the moving process;
 		 * OBS.: the moving boolean variable are used to make sure that a movement will be initiate and finished without
 		 * interference of another clicking on the keyboard;
-		 * 
 		 */
 		
 		if(moveUp==true && counter!=necessaryMovements){
