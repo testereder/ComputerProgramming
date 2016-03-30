@@ -1,7 +1,5 @@
 package src.dev.display;
 
-//YOU SEE IT WORKS
-
 import java.awt.Canvas;
 import java.awt.Dimension;
 import javax.swing.JFrame;
